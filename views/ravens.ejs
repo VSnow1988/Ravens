@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title><%= title %></title>
+		<link rel="stylesheet" href="./style.css">
+	</head>
+	<body>
+	<center><h1>CUTE CUDDLY BIRDIES</h1></center>
+	<br><br>
+	
+		<center><img src="./raven.jpg"><br><br></center>
+	
+		<div id="ravens">
+			<% for (var x of allravens) {%>
+				<span><a href="/ravens/<%= x._id %>"><%= x.name %></a> &nbsp; &nbsp; &nbsp; &nbsp; | 
+				<a href="ravens/destroy/<%= x._id %>">Destroy</a> | <a href="ravens/edit/<%= x._id %>">Edit</a></span>
+				<br><br>
+			<% } %>
+		</div>
+		
+		<br><br>
+		<center>
+		<form action="/ravens/new" method="GET">
+			<input type="submit" value="Add New Raven">
+		</form>
+		</center>
+	
+	</body>
+</html>
